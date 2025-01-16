@@ -24,4 +24,10 @@ public class EthereumController {
         EthereumPriceResponse response = ethereumService.getEthereumPrice();
         return ResponseEntity.ok(response);
     }
+
+    @PostMapping
+    public void connectEthereum() throws Exception {
+        ethereumService.testConnection();
+        ethereumService.getEthereumPrice();
+    }
 }

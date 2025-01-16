@@ -10,7 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StudyApplication implements CommandLineRunner {
+public class StudyApplication {
 
     @Autowired
     private EthereumService ethereumService;
@@ -19,9 +19,4 @@ public class StudyApplication implements CommandLineRunner {
         SpringApplication.run(StudyApplication.class, args);
     }
 
-    @Override
-    public void run(String... args) throws Exception {
-        ethereumService.testConnection();
-        ethereumService.getEthereumPrice();
-    }
 }
