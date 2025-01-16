@@ -22,5 +22,6 @@ public class StudyApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         ethereumService.testConnection();
+        ethereumService.getEthereumPrice();
     }
 }
