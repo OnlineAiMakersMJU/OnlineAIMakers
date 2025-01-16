@@ -1,13 +1,26 @@
 package com.example.study;
 
+import com.example.study.ethereum.service.EthereumService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StudyApplication {
+public class StudyApplication implements CommandLineRunner {
+
+    @Autowired
+    private EthereumService ethereumService;
 
     public static void main(String[] args) {
         SpringApplication.run(StudyApplication.class, args);
     }
 
+    @Override
+    public void run(String... args) throws Exception {
+        ethereumService.testConnection();
+    }
 }
